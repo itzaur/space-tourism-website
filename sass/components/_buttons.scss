@@ -1,0 +1,18 @@
+.btn-toggle {
+  position: absolute;
+  display: none;
+  width: 3rem;
+  aspect-ratio: 1;
+  right: 4rem;
+  background: no-repeat center/cover url('../assets/shared/icon-hamburger.svg');
+  border: 0;
+  transition: background 0.5s ease-in-out;
+
+  span {
+    display: none;
+  }
+
+  @include respond-to('small') {
+    display: block;
+  }
+}

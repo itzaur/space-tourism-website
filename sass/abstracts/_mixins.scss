@@ -1,0 +1,38 @@
+//1440px - desktop - 90em
+//900px -
+//768px - tablet - 48em
+//375px - phone - 23,44em
+
+$breakpoints: (
+  'big': (
+    max-width: 90em,
+  ),
+  'large': (
+    max-width: 56.25em,
+  ),
+  'medium': (
+    max-width: 48em,
+  ),
+  'small': (
+    max-width: 23.44em,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin flex($dir, $jus, $ali) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+  gap: var(--gap, 1rem);
+}
