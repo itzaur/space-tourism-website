@@ -1,0 +1,34 @@
+.home {
+  display: grid;
+  grid-template-areas:
+    'h2 h2'
+    'h1 btn'
+    'p btn';
+  grid-template-columns: min-content minmax(30rem, 1fr);
+  //   align-items: center;
+  //   background: pink;
+  grid-column-gap: 1rem;
+
+  @include respond-to('large') {
+    grid-template-areas:
+      'h2'
+      'h1'
+      'p'
+      'btn';
+    grid-template-columns: 1fr;
+    // row-gap: 2rem;
+    justify-items: center;
+  }
+
+  &__title {
+    grid-area: h1;
+  }
+
+  &__suptitle {
+    grid-area: h2;
+  }
+
+  &__subtitle {
+    grid-area: p;
+  }
+}

@@ -26,9 +26,9 @@ btnMenu.addEventListener('click', () => {
   } else if (visual === 'true') {
     nav.setAttribute('data-visual', false);
     btnMenu.style.background = `no-repeat center/cover url('../assets/shared/icon-hamburger.svg')`;
-    setTimeout(function () {
-      nav.style.visibility = 'hidden';
-      nav.style.opacity = 0;
-    }, 1000);
+    // setTimeout(function () {
+    //   nav.style.visibility = 'hidden';
+    //   nav.style.opacity = 0;
+    // }, 1000);
   }
 });

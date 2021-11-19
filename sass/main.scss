@@ -1,5 +1,6 @@
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
+@import 'abstracts/animations';
 
 @import 'base/base';
 @import 'base/reset';
@@ -10,6 +11,7 @@
 
 @import 'layout/header';
 @import 'layout/navigation';
+@import 'layout/main';
 @import 'layout/footer';
 
 @import 'pages/home';

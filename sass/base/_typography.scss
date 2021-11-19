@@ -1,0 +1,41 @@
+.home {
+  & > * + * {
+    margin-top: 3rem;
+  }
+
+  :is(h2, p) {
+    color: var(--clr-secondary);
+  }
+
+  &__title {
+    font-size: clamp(8rem, 13vw, 15rem);
+    font-family: var(--ff-primary);
+    font-weight: normal;
+    line-height: clamp(8rem, 13vw, 15rem);
+    text-transform: uppercase;
+  }
+
+  &__suptitle {
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    letter-spacing: 4.75px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+
+    @include respond-to('large') {
+      text-align: center;
+    }
+  }
+}
+
+.btn-explore {
+  text-transform: uppercase;
+  font-size: 3.7rem;
+  font-family: var(--ff-primary);
+}

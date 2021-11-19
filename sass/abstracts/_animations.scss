@@ -1,0 +1,57 @@
+//Navigation
+@keyframes moveLeft {
+  from {
+    transform: translateX(22rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(22rem);
+  }
+}
+
+//Btn explore
+@keyframes btnMoveBase {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes btnMove {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes btnMoveSec {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}

@@ -1,9 +1,9 @@
 .navigation {
   --clr-lig: 20%;
   background: hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.54);
-  // backdrop-filter: blur(2.5rem);
+
   padding: 0rem 12.5vw 0rem 10.3vw;
-  // padding: 0rem 16.5rem 0rem 12.3rem;
+
   visibility: visible;
   opacity: 1;
 
@@ -173,23 +173,5 @@
     @include respond-to('large') {
       --gap: 0.5rem;
     }
-  }
-}
-
-@keyframes moveLeft {
-  from {
-    transform: translateX(22rem);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveRight {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(22rem);
   }
 }
