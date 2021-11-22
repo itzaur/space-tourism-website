@@ -5,8 +5,7 @@
     'h1 btn'
     'p btn';
   grid-template-columns: min-content minmax(30rem, 1fr);
-  //   align-items: center;
-  //   background: pink;
+
   grid-column-gap: 1rem;
 
   @include respond-to('large') {
@@ -31,4 +30,138 @@
   &__subtitle {
     grid-area: p;
   }
+}
+
+.home--destination {
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'img info';
+  grid-template-columns: 1fr minmax(30rem, 1fr);
+
+  grid-column-gap: 12rem;
+
+  @include respond-to('large') {
+    grid-template-areas:
+      'title'
+      'img'
+      'info';
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+  }
+
+  .home__title--destination {
+    font-size: 10rem;
+    line-height: 10rem;
+  }
+
+  .home__suptitle--destination {
+    grid-area: title;
+    margin-bottom: 4rem;
+  }
+
+  .home__subtitle--destination {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    border-bottom: 1px solid
+      hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.4);
+    width: calc(max(47ch, 80%));
+    padding-bottom: 5rem;
+  }
+
+  .moon {
+    grid-area: img;
+
+    img {
+      margin-left: auto;
+    }
+  }
+
+  .destination-info {
+    grid-area: info;
+
+    & > * + * {
+      margin-top: 3rem;
+    }
+
+    @include respond-to('large') {
+      @include flex(column, center, center);
+    }
+  }
+
+  .destination-nav {
+    --gap: 3.5rem;
+    @include flex(row, start, center);
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    color: var(--clr-secondary);
+    margin-bottom: 4rem;
+
+    &__list {
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s ease-in;
+      cursor: pointer;
+    }
+
+    &__list:hover:not(.active) {
+      border-bottom: 2px solid
+        hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.5);
+    }
+
+    &__list.active {
+      color: var(--clr-white);
+      border-bottom: 2px solid
+        hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 1);
+    }
+  }
+
+  .stats {
+    --gap: clamp(1rem, 2vw, 17rem);
+    @include flex(row, start, center);
+
+    & > * {
+      flex-basis: 100%;
+    }
+
+    @include respond-to('large') {
+      --gap: clamp(8rem, 2vw, 17rem);
+      width: 100%;
+      justify-content: center;
+
+      & > * {
+        flex-basis: auto;
+        text-align: center;
+      }
+    }
+
+    &__distance,
+    &__time {
+      h2 {
+        font-size: 1.7rem;
+        font-family: inherit;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-size: clamp(2rem, 3vw, 3.2rem);
+        font-family: var(--ff-primary);
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.opacity {
+  animation: destinationOpacity 2.5s ease forwards;
+}
+
+.destinationMove {
+  animation: destinationMove 2.5s ease forwards;
+}
+
+.destinationTravelMove {
+  animation: destinationTravelMove 2.5s ease forwards;
 }

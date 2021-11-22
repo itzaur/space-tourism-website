@@ -112,7 +112,7 @@
 
     &:hover:not(.active):after {
       visibility: visible;
-      opacity: 1;
+      opacity: 0.5;
     }
 
     &.active:before {
@@ -155,6 +155,9 @@
   }
 
   &__link {
+    text-decoration: none;
+    color: currentColor;
+
     @include flex(null, null, center);
     --gap: 1.4rem;
 

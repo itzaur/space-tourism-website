@@ -44,15 +44,15 @@
     z-index: -1;
   }
 
-  &:hover {
+  &:hover:not(:active) {
     animation: btnMoveBase 0.5s forwards;
   }
 
-  &:hover:before {
+  &:hover:not(:active):before {
     animation: btnMove 1.5s forwards;
   }
 
-  &:hover:after {
+  &:hover:not(:active):after {
     animation: btnMoveSec 1.5s forwards;
   }
 
@@ -64,4 +64,16 @@
   @include respond-to('small') {
     margin: 8rem 0 0 0;
   }
+}
+
+.btn-explore:active .btn-explore {
+  animation: btnMoveBase 0.5s forwards;
+}
+
+.btn-explore:active .btn-explore:before {
+  animation: btnMove 1.5s forwards;
+}
+
+.btn-explore:active .btn-explore:after {
+  animation: btnMoveSec 1.5s forwards;
 }

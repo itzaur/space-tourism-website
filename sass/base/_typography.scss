@@ -21,6 +21,12 @@
     font-weight: 400;
     letter-spacing: 4.75px;
     text-transform: uppercase;
+
+    &--destination span {
+      color: hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.2);
+      font-weight: 700;
+      margin-right: 2rem;
+    }
   }
 
   &__subtitle {

@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-  padding: 25rem 8rem;
+  padding: 25rem 18rem;
 
   @include respond-to('large') {
     padding: 5rem 4rem;
@@ -27,5 +27,13 @@ body {
 
   @include respond-to('small') {
     padding: 3rem 2rem;
+  }
+
+  &--destination {
+    // display: grid;
+    // grid-template-columns: minmax(2rem, 1fr) minmax(0, 60rem) minmax(2rem, 1fr);
+    // place-items: center;
+    // padding: 0;
+    padding: 4rem 8rem;
   }
 }
