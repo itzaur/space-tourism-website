@@ -1,55 +1,4 @@
 'use strict';
-const destinations = [
-  {
-    id: 1,
-    name: 'Moon',
-    images: {
-      png: './assets/destination/image-moon.png',
-      webp: './assets/destination/image-moon.webp',
-    },
-    description:
-      'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
-    distance: '384,400 km',
-    travel: '3 days',
-  },
-  {
-    id: 2,
-    name: 'Mars',
-    images: {
-      png: './assets/destination/image-mars.png',
-      webp: './assets/destination/image-mars.webp',
-    },
-    description:
-      'Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!',
-    distance: '225 mil. km',
-    travel: '9 months',
-  },
-  {
-    id: 3,
-    name: 'Europa',
-    images: {
-      png: './assets/destination/image-europa.png',
-      webp: './assets/destination/image-europa.webp',
-    },
-    description:
-      'The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.',
-    distance: '628 mil. km',
-    travel: '3 years',
-  },
-  {
-    id: 4,
-    name: 'Titan',
-    images: {
-      png: './assets/destination/image-titan.png',
-      webp: './assets/destination/image-titan.webp',
-    },
-    description:
-      'The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.',
-    distance: '1.6 bil. km',
-    travel: '7 years',
-  },
-];
-
 const pages = {
   destinations: [
     {
@@ -170,7 +119,7 @@ const nav = document.querySelector('.navigation');
 const navContainer = document.querySelector('.navigation__list');
 const navItems = document.querySelectorAll('.navigation__item');
 // const navItemActive = document.querySelector('.active');
-// const navLinks = document.querySelectorAll('.navigation__link');
+const navLinks = document.querySelectorAll('.navigation__link');
 const btnMenu = document.querySelector('.btn-toggle');
 const btnExplore = document.querySelector('.btn-explore');
 
@@ -195,56 +144,56 @@ btnMenu.addEventListener('click', () => {
   } else if (visual === 'true') {
     nav.setAttribute('data-visual', false);
     btnMenu.style.background = `no-repeat center/cover url('../assets/shared/icon-hamburger.svg')`;
-    // setTimeout(function () {
-    //   nav.style.visibility = 'hidden';
-    //   nav.style.opacity = 0;
-    // }, 1000);
   }
 });
 
-const destinationNav = document.querySelector('.destination-nav');
-const destinationStats = document.querySelector('.stats');
-const planets = document.querySelectorAll('.destination-nav__list');
-const planetName = document.querySelector('.home__title--destination');
-const img = document.querySelector('.moon img');
-const imgWebp = document.querySelector('.moon source');
-const description = document.querySelector('.home__subtitle--destination');
-const distance = document.querySelector('.stats__distance h3');
-const travel = document.querySelector('.stats__time h3');
+// const destinationNav = document.querySelector('.destination-nav');
+// const destinationStats = document.querySelector('.stats');
+// const planets = document.querySelectorAll('.destination-nav__list');
+// const planetName = document.querySelector('.home__title--destination');
+// const img = document.querySelector('.moon img');
+// const imgWebp = document.querySelector('.moon source');
+// const description = document.querySelector('.home__subtitle--destination');
+// const distance = document.querySelector('.stats__distance h3');
+// const travel = document.querySelector('.stats__time h3');
 
-destinationNav.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.destination-nav__list');
-  if (!clicked) return;
-  planets.forEach(planet => planet.classList.remove('active'));
+// destinationNav.addEventListener('click', function (e) {
+//   const clicked = e.target.closest('.destination-nav__list');
+//   if (!clicked) return;
+//   planets.forEach(planet => planet.classList.remove('active'));
 
-  clicked.classList.add('active');
-});
+//   clicked.classList.add('active');
+// });
 
-planets.forEach(planet => {
-  planet.addEventListener('click', e => {
-    // const dataID = e.target.parentNode.getAttribute('data-object');
-    const tabID = e.target.parentNode.getAttribute('tabindex');
-    const item = pages.destinations[tabID];
-    // console.log(tabID);
-    if (!tabID) return;
+// planets.forEach(planet => {
+//   planet.addEventListener('click', e => {
 
-    img.src = item.images.png;
-    imgWebp.srcset = item.images.webp;
-    description.textContent = item.description;
-    distance.textContent = item.distance;
-    travel.textContent = item.travel;
-    planetName.textContent = item.name;
+//     const tabID = e.target.parentNode.getAttribute('tabindex');
+//     const item = pages.destinations[tabID];
 
-    img.classList.add('opacity');
-    planetName.classList.add('destinationMove');
-    description.classList.add('destinationMove');
-    destinationStats.classList.add('destinationTravelMove');
+//     if (!tabID) return;
 
-    setTimeout(function () {
-      img.classList.remove('opacity');
-      planetName.classList.remove('destinationMove');
-      description.classList.remove('destinationMove');
-      destinationStats.classList.remove('destinationTravelMove');
-    }, 2500);
-  });
-});
+//     img.src = item.images.png;
+//     imgWebp.srcset = item.images.webp;
+//     description.textContent = item.description;
+//     distance.textContent = item.distance;
+//     travel.textContent = item.travel;
+//     planetName.textContent = item.name;
+
+//     animation();
+//   });
+// });
+
+// function animation() {
+//   img.classList.add('opacity');
+//   planetName.classList.add('destinationMove');
+//   description.classList.add('destinationMove');
+//   destinationStats.classList.add('destinationTravelMove');
+
+//   setTimeout(function () {
+//     img.classList.remove('opacity');
+//     planetName.classList.remove('destinationMove');
+//     description.classList.remove('destinationMove');
+//     destinationStats.classList.remove('destinationTravelMove');
+//   }, 2500);
+// }

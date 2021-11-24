@@ -51,23 +51,45 @@
     justify-items: center;
   }
 
-  .home__title--destination {
-    font-size: 10rem;
-    line-height: 10rem;
-  }
-
   .home__suptitle--destination {
     grid-area: title;
     margin-bottom: 4rem;
   }
 
+  .home__suptitle--crew {
+    @include respond-to('small') {
+      margin-bottom: 1rem;
+    }
+  }
+
   .home__subtitle--destination {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     line-height: 3.2rem;
     border-bottom: 1px solid
       hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.4);
     width: calc(max(47ch, 80%));
     padding-bottom: 5rem;
+
+    @include respond-to('small') {
+      width: 100%;
+      padding-bottom: 3rem;
+      line-height: 1.4;
+    }
+  }
+
+  .home__subtitle--crew {
+    width: 70%;
+    border-bottom: none;
+    text-align: left;
+
+    @include respond-to('small') {
+      width: 100%;
+      margin-top: 1.5rem !important;
+    }
+
+    &.destinationMove {
+      animation-duration: 2.6s;
+    }
   }
 
   .moon {
@@ -83,6 +105,14 @@
 
     & > * + * {
       margin-top: 3rem;
+
+      @include respond-to('large') {
+        margin-top: 2rem;
+      }
+
+      @include respond-to('small') {
+        margin-top: 1.5rem;
+      }
     }
 
     @include respond-to('large') {
@@ -93,10 +123,19 @@
   .destination-nav {
     --gap: 3.5rem;
     @include flex(row, start, center);
-    font-size: 1.9rem;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
     text-transform: uppercase;
     color: var(--clr-secondary);
     margin-bottom: 4rem;
+
+    @include respond-to('large') {
+      margin-bottom: 1rem;
+    }
+
+    @include respond-to('small') {
+      --gap: 1.5rem;
+      margin-bottom: 0;
+    }
 
     &__list {
       border-bottom: 2px solid transparent;
@@ -135,6 +174,11 @@
       }
     }
 
+    @include respond-to('small') {
+      --gap: 2rem;
+      flex-direction: column;
+    }
+
     &__distance,
     &__time {
       h2 {
@@ -149,6 +193,27 @@
         font-family: var(--ff-primary);
         font-weight: normal;
         text-transform: uppercase;
+      }
+    }
+  }
+
+  .crew-info {
+    grid-area: info;
+    align-items: flex-start;
+
+    @include respond-to('large') {
+      align-items: center;
+
+      & > * {
+        text-align: center;
+      }
+    }
+
+    @include respond-to('small') {
+      align-items: center;
+
+      & > * + * {
+        margin-top: 0;
       }
     }
   }

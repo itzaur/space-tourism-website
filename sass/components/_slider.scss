@@ -1,0 +1,26 @@
+.dots {
+  --gap: 3rem;
+  @include flex(null, null, center);
+
+  @include respond-to('small') {
+    --gap: 1.5rem;
+    order: -1;
+    margin-block: 2rem !important;
+  }
+
+  & div {
+    width: 2rem;
+    aspect-ratio: 1;
+    background: hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.active {
+      background: hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 1);
+    }
+
+    @include respond-to('small') {
+      width: 1rem;
+    }
+  }
+}
