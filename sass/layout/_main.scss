@@ -62,6 +62,14 @@
     }
   }
 
+  .home__suptitle--technology {
+    grid-area: title;
+
+    @include respond-to('small') {
+      margin-bottom: 3rem;
+    }
+  }
+
   .home__subtitle--destination {
     font-size: clamp(1.4rem, 3vw, 1.8rem);
     line-height: 3.2rem;
@@ -92,11 +100,45 @@
     }
   }
 
+  .home__subtitle--technology {
+    @include respond-to('small') {
+      padding-inline: 2rem;
+    }
+  }
+
   .moon {
     grid-area: img;
 
     img {
+      height: 100%;
       margin-left: auto;
+      object-fit: cover;
+    }
+  }
+
+  .technology {
+    grid-area: img;
+    grid-column: 3 / -1;
+    grid-row: 2 / -1;
+    height: 100%;
+
+    @include respond-to('large') {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+
+      width: 100%;
+    }
+
+    @include respond-to('small') {
+      border: none;
+    }
+
+    &-info {
+      grid-area: info;
+
+      @include respond-to('large') {
+        grid-column: 1 / -1;
+      }
     }
   }
 

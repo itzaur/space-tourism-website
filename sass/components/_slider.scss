@@ -23,4 +23,41 @@
       width: 1rem;
     }
   }
+
+  &--technology {
+    grid-area: dots;
+    flex-direction: column;
+
+    @include respond-to('large') {
+      --gap: 1.5rem;
+      order: -1;
+      flex-direction: row;
+      margin-bottom: 2rem;
+      // margin-block: 2rem !important;
+    }
+
+    & div {
+      position: relative;
+      width: 6rem;
+      background: transparent;
+      border: 1px solid
+        hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.2);
+
+      @include respond-to('small') {
+        width: 4rem;
+      }
+
+      & > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+      }
+
+      &.active {
+        color: var(--clr-primary);
+      }
+    }
+  }
 }

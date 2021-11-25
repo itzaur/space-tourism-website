@@ -2,11 +2,14 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  color: var(--clr-white);
+  overflow-x: hidden;
+}
+
 body[data-bg='home'] {
   background: url('../assets/home/background-home-desktop.jpg') no-repeat
     center/cover;
-  color: var(--clr-white);
-  overflow-x: hidden;
 
   @include respond-to('large') {
     background: url('../assets/home/background-home-tablet.jpg') no-repeat
@@ -22,8 +25,6 @@ body[data-bg='home'] {
 body[data-bg='destination'] {
   background: url('../assets/destination/background-destination-desktop.jpg')
     no-repeat center/cover;
-  color: var(--clr-white);
-  overflow-x: hidden;
 
   @include respond-to('large') {
     background: url('../assets/destination/background-destination-tablet.jpg')
@@ -38,12 +39,9 @@ body[data-bg='destination'] {
 
 body[data-bg='crew'] {
   @include flex(column, space-between, null);
-  // display: grid;
-  // place-items: end;
+
   background: url('../assets/crew/background-crew-desktop.jpg') no-repeat
     center/cover;
-  color: var(--clr-white);
-  overflow-x: hidden;
 
   @include respond-to('large') {
     background: url('../assets/crew/background-crew-tablet.jpg') no-repeat
@@ -53,6 +51,22 @@ body[data-bg='crew'] {
   @include respond-to('small') {
     background: url('../assets/crew/background-crew-mobile.jpg') no-repeat
       center/cover;
+  }
+}
+
+body[data-bg='technology'] {
+  @include flex(column, flex-start, null);
+  background: url('../assets/technology/background-technology-desktop.jpg')
+    no-repeat center/cover;
+
+  @include respond-to('large') {
+    background: url('../assets/technology/background-technology-tablet.jpg')
+      no-repeat center/cover;
+  }
+
+  @include respond-to('small') {
+    background: url('../assets/technology/background-technology-mobile.jpg')
+      no-repeat center/cover;
   }
 }
 
@@ -68,10 +82,6 @@ body[data-bg='crew'] {
   }
 
   &--destination {
-    // display: grid;
-    // grid-template-columns: minmax(2rem, 1fr) minmax(0, 60rem) minmax(2rem, 1fr);
-    // place-items: center;
-    // padding: 0;
     padding: 4rem 3vw;
   }
 
@@ -80,6 +90,14 @@ body[data-bg='crew'] {
 
     @include respond-to('large') {
       padding: 0 3vw;
+    }
+  }
+
+  &--technology {
+    padding: 4rem 0 8rem 12rem;
+
+    @include respond-to('large') {
+      padding: 4rem 0;
     }
   }
 }

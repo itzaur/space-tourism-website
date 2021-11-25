@@ -1,0 +1,65 @@
+.home--technology {
+  grid-template-columns: minmax(1rem, 1fr) minmax(0, 45fr) minmax(0, 30fr);
+  justify-items: start;
+  //   grid-template-rows: 1fr min-content 1fr;
+
+  @include respond-to('large') {
+    // grid-template-columns: minmax(0, 45fr) minmax(0, 30fr);
+    grid-template-areas:
+      '. title title'
+      '. img img'
+      '. info info';
+    grid-template-rows: auto;
+  }
+
+  //   @include respond-to('small') {
+  //     grid-template-areas:
+  //       '. title title .'
+  //       '. img img .'
+  //       '. info info .';
+  //     grid-template-rows: auto;
+  //   }
+}
+
+.technology-info {
+  display: grid;
+  grid-template-areas:
+    'dots name'
+    'dots model'
+    'dots info';
+  column-gap: 4rem;
+
+  & h3:first-child {
+    grid-area: name;
+  }
+
+  & h3:nth-child(2) {
+    grid-area: model;
+  }
+
+  & p {
+    grid-area: info;
+  }
+}
+
+@include respond-to('large') {
+  .home .technology-info {
+    grid-column: 1 / -1;
+  }
+}
+
+.img {
+  &-portrait {
+    @include respond-to('large') {
+      display: none;
+    }
+  }
+  &-landscape {
+    display: none;
+
+    @include respond-to('large') {
+      display: block;
+      width: 100%;
+    }
+  }
+}

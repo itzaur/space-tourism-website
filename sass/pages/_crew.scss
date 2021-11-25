@@ -45,15 +45,4 @@
     border-bottom: 1px solid
       hsla(var(--clr-hue), var(--clr-sat), var(--clr-lig), 0.2);
   }
-
-  // & img {
-  //   @include respond-to('large') {
-  //     // margin: 0 auto;
-  //   }
-  // }
 }
-
-// .crew-info {
-//   grid-area: info;
-//   align-items: flex-start;
-// }

@@ -127,6 +127,7 @@ navContainer.addEventListener('click', clickHoverNav);
 
 function clickHoverNav(e) {
   const clicked = e.target.closest('.navigation__item');
+  console.log(clicked);
 
   navItems.forEach(item => item.classList.remove('active'));
 
