@@ -79,12 +79,6 @@
     @include respond-to('large') {
       text-align: center;
     }
-
-    // &--crew {
-    //   @include respond-to('small') {
-    //     margin-top: 3rem;
-    //   }
-    // }
   }
 }
 

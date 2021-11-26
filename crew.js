@@ -8,7 +8,6 @@ const crewImgPng = document.querySelector('.commander img');
 const crewImgWebp = document.querySelector('.commander source');
 
 dotsContainer.addEventListener('click', e => {
-  // console.log(e.target);
   dots.forEach(dot => dot.classList.remove('active'));
   const dotId = e.target.getAttribute('tabindex');
   const clicked = e.target;

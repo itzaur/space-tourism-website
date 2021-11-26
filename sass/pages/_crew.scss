@@ -4,7 +4,6 @@
     '. info img .'
     '. . img .';
   grid-column-gap: 2rem;
-  // grid-template-columns: 1.5fr 1fr;
   grid-template-columns: minmax(1rem, 1fr) minmax(0, 45fr) minmax(0, 30fr) minmax(
       1rem,
       1fr
