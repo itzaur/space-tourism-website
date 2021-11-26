@@ -33,7 +33,7 @@
       }
 
       @include respond-to('large') {
-        font-size: clamp(4rem, 13vw, 6.4rem);
+        font-size: clamp(4rem, 10vw, 6.4rem);
         line-height: 1;
       }
 
@@ -79,12 +79,6 @@
     @include respond-to('large') {
       text-align: center;
     }
-
-    // &--crew {
-    //   @include respond-to('small') {
-    //     margin-top: 3rem;
-    //   }
-    // }
   }
 }
 
