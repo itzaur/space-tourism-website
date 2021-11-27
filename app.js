@@ -146,3 +146,25 @@ btnMenu.addEventListener('click', () => {
     btnMenu.style.background = `no-repeat center/cover url('../assets/shared/icon-hamburger.svg')`;
   }
 });
+
+window.onload = () => {
+  const transitionElement = document.querySelector('.transition');
+  const links = document.querySelectorAll('a[href]');
+
+  setTimeout(function () {
+    transitionElement.classList.remove('is-active');
+  }, 500);
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      let target = e.target.href;
+
+      transitionElement.classList.add('is-active');
+
+      setTimeout(() => {
+        window.location = target;
+      }, 500);
+    });
+  });
+};

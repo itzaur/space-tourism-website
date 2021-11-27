@@ -9,7 +9,7 @@
       1fr
     );
   justify-items: start;
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: 1fr minmax(50rem, min-content) 1fr;
 
   @include respond-to('large') {
     grid-template-areas:
