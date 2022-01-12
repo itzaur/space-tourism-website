@@ -1,7 +1,11 @@
+#dots {
+  margin-top: auto;
+}
+
 .dots {
   --gap: 3rem;
   @include flex(null, null, center);
-  margin-top: auto !important;
+  // margin-top: auto;
 
   @include respond-to('small') {
     --gap: 1.5rem;

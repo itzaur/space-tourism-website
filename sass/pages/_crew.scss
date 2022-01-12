@@ -3,13 +3,13 @@
     '. title img .'
     '. info img .'
     '. . img .';
-  grid-column-gap: 2rem;
+  grid-column-gap: 0.5rem;
   grid-template-columns: minmax(1rem, 1fr) minmax(0, 45fr) minmax(0, 30fr) minmax(
       1rem,
       1fr
     );
   justify-items: start;
-  grid-template-rows: 1fr minmax(50rem, min-content) 1fr;
+  grid-template-rows: 1fr minmax(51rem, min-content) 1fr;
 
   @include respond-to('large') {
     grid-template-areas:

@@ -86,7 +86,7 @@ body[data-bg='technology'] {
   }
 
   &--crew {
-    padding: 4rem 12rem 0 12rem;
+    padding: 4rem 0 0 12rem;
 
     @include respond-to('large') {
       padding: 0 3vw;

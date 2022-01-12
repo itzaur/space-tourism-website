@@ -42,6 +42,12 @@
 @include respond-to('large') {
   .home .technology-info {
     grid-column: 1 / -1;
+    grid-template-areas:
+      'dots'
+      'name'
+      'model'
+      'info';
+    justify-items: center;
   }
 }
 
